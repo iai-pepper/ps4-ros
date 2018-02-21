@@ -16,6 +16,7 @@ Sony PlayStation 4 DualShock®4 node joy_msg to twist_msg
 # Starting
 ## roslaunch
 1. `$roslaunch ps4_ros ps4`
+
 This will load the key mappings for the ps4 conrtoller, launch the ps4 controller driver, the pepper joy node, joy node, ps4 ros node.
 
 ## One by one (if needed)
