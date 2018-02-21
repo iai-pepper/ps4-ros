@@ -14,14 +14,17 @@ Sony PlayStation 4 DualShock®4 node joy_msg to twist_msg
   1. `$sudo chmod a+rw /dev/input/jsX`
 
 # Starting
-## One by one
+## roslaunch
+1. `$roslaunch ps4_ros ps4`
+This will load the key mappings for the ps4 conrtoller, launch the ps4 controller driver, the pepper joy node, joy node, ps4 ros node.
+
+## One by one (if needed)
 1. `$ds4drv` if it is not running already.
 1. `$rosparam set joy_node/dev "/dev/input/jsX"`
 1. `$rosrun joy joy_node`
 1. `$rosrun ps4_ros ps4_ros`
 
-## roslaunch
-1. `$roslaunch ps4_ros ps4`
+
 
 
 * One can adjust the following parameter inside the launch file or use rosparam by using the _one by one_ start procedure
