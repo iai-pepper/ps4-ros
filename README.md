@@ -7,7 +7,10 @@ Sony PlayStation 4 DualShock®4 node joy_msg to twist_msg
 1. Go into pairing mode with PS4: Playstation button + share button for ~5 sec
 1. Run `$ds4drv` from command line to connect to PS4
   1. This will output something like _Created devices /dev/input/jsX
-  1. remember /dev/input/js__X__ and update the launch file (default X=0)
+  1. remember /dev/input/js__X__ and create and environment variable in your .bashrc, called JOY_DEV.
+  	example, add following in your .bashrc:
+  	export JOY_DEV=/dev/input/js1
+     NOTE: If your device jsX number changes at some point, you will have to adjust it accordingly.
   1. `$sudo chmod a+rw /dev/input/jsX`
 
 # Starting
