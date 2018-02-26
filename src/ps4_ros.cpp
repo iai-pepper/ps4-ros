@@ -16,10 +16,10 @@ public:
         ros::NodeHandle private_nh("~");
         private_nh.param("scale_linear", this->scale_linear, 1.0);
         private_nh.param("scale_angular", this->scale_angular, 1.0);
-        private_nh.param<std::string>("pub_topic", this->pubName, "/searchbot/p3at/vel_cmd");
+        private_nh.param<std::string>("pub_topic", this->pubName, "searchbot/p3at/vel_cmd");
 
         this->chat = n.advertise<geometry_msgs::Twist>(pubName, 1000);
-        this->sub = n.subscribe<sensor_msgs::Joy>("/joy", 10, &PS4_ROS::subscribePS4, this);
+        this->sub = n.subscribe<sensor_msgs::Joy>("joy", 10, &PS4_ROS::subscribePS4, this);
 
         /* set calibration counter to zero */
         this->calib1 = 0;

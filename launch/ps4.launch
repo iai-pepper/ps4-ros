@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <launch>
+<group ns="pepper_robot">
+ <param name="tf_prefix" value="pepper_robot" />
 	
 	 <!-- load the ps4 mapping from file to the param server -->
         <rosparam file="$(find nao_teleop)/config/ps4controller.yaml" command="load" ns="teleop_nao_joy" />
@@ -21,9 +23,9 @@
 	<node pkg="ps4_ros" type="ps4_ros" name="ps4" output="screen">
 	  	<param name="scale_linear" value="1.0"/>
 	  	<param name="scale_angular" value="0.5"/>
-	  	<param name="pub_topic" value="/searchbot/p3at/vel_cmd"/>
+	  	<param name="pub_topic" value="searchbot/p3at/vel_cmd"/>
 	</node>
-
+</group>
 </launch>
 
 
